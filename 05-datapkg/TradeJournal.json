@@ -1,0 +1,13 @@
+{
+    "success": "true",
+    "tradejournal": [
+        {
+            "id": 1,
+            "name": "Summer Longs"
+        },
+        {
+            "id": 2,
+            "name": "Options Journal"
+        }
+    ]
+}

@@ -4,27 +4,32 @@
         {
             "id": 1,
             "ticker": "IBM",
-            "long_short": "long"
+            "long_short": "long",
+            "journal_id": 1
         },
         {
             "id": 2,
             "ticker": "MSFT",
-            "long_short": "short"
+            "long_short": "short",
+            "journal_id": 1
         },
         {
             "id": 3,
             "ticker": "TSLA",
-            "long_short": "long"
+            "long_short": "long",
+            "journal_id": 1
         },
         {
             "id": 4,
             "ticker": "AAPL",
-            "long_short": "long"
+            "long_short": "long",
+            "journal_id": 1
         },
         {
             "id": 5,
             "ticker": "AAPL",
-            "long_short": "short"
+            "long_short": "short",
+            "journal_id": 1
         }
     ]
 }
