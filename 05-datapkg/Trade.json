@@ -1,0 +1,30 @@
+{
+    "success": "true",
+    "trade": [
+        {
+            "id": 1,
+            "ticker": "IBM",
+            "long_short": "long"
+        },
+        {
+            "id": 2,
+            "ticker": "MSFT",
+            "long_short": "short"
+        },
+        {
+            "id": 3,
+            "ticker": "TSLA",
+            "long_short": "long"
+        },
+        {
+            "id": 4,
+            "ticker": "AAPL",
+            "long_short": "long"
+        },
+        {
+            "id": 5,
+            "ticker": "AAPL",
+            "long_short": "short"
+        }
+    ]
+}
