@@ -116,7 +116,8 @@ Ext.define('TL.view.TradesGrid', {
                      * @returns {*}
                      */
                     ,renderer: function(value, metaData, record, rowIdx, colIdx, store, view) {
-                        return Ext.util.Format.usMoney(record.get('return') * 100);
+
+                        return Ext.util.Format.number(record.get('return') * 100, '0.00') + '%';
                         //return Ext.util.Format.usMoney(record.get('estimate') * record.get('rate'));
                     }
                 },
@@ -136,25 +137,26 @@ Ext.define('TL.view.TradesGrid', {
                     ,sortable: true
                     ,groupable: false
                     ,summaryType: function(records, values) {
-                    var i = 0,
-                        length = records.length,
-                        total = 0,
-                        record;
+                        var i = 0,
+                            length = records.length,
+                            total = 0,
+                            record;
 
-                    for (; i < length; ++i) {
-                        record = records[i];
-                        total += record.get('pl');
+                        for (; i < length; ++i) {
+                            record = records[i];
+                            total += record.get('pl');
+                        }
+                        return total;
                     }
-                    return total;
-                }
                     ,renderer :  function(val) {
-                    if (val > 0) {
-                        return '<span style="color:green;">' + val + '</span>';
-                    } else if (val < 0) {
-                        return '<span style="color:red;">' + val + '</span>';
+                        var money = Ext.util.Format.usMoney(val);
+                        if (val > 0) {
+                            return '<span style="color:green;">' + money + '</span>';
+                        } else if (val < 0) {
+                            return '<span style="color:red;">' + money + '</span>';
+                        }
+                        return val;
                     }
-                    return val+"$";
-                }
                     /*
                      ,summaryRenderer: function(value, summaryData, dataIndex) {
                      return value + ' bucks';
