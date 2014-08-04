@@ -8,7 +8,8 @@ Ext.application({
     ],
 
     stores: [
-        'TradesStore'
+        'TradesStore',
+        'StrategyStore'
     ],
 
     controllers: [

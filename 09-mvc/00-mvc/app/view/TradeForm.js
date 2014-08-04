@@ -7,7 +7,7 @@ Ext.define('TL.view.TradeForm', {
     title : 'Trade',
     layout: 'fit',
     autoShow: true,
-    width: 450,
+    width: 550,
     itemId: 'tradeFormItemId',
 
     initComponent: function() {
@@ -41,9 +41,17 @@ Ext.define('TL.view.TradeForm', {
                             fieldLabel: 'Ticker'
                         },
                         {
-                            xtype: 'textfield',
-                            name : 'strategy',
-                            fieldLabel: 'Strategy'
+                            xtype: 'combobox',
+                            fieldLabel: 'Strategies',
+                            name: 'strategy',
+                            store: {
+                                type: 'strategies'
+                            },
+                            valueField: 'name',
+                            displayField: 'name',
+                            typeAhead: true,
+                            queryMode: 'local',
+                            emptyText: 'Select a strategy...'
                         },
                         {
                             xtype: 'textfield',
@@ -51,13 +59,14 @@ Ext.define('TL.view.TradeForm', {
                             fieldLabel: 'Type'
                         },
                         {
-                            xtype: 'textarea',
+                            xtype: 'textfield',
                             name : 'option',
-                            fieldLabel: 'Option',
-                            // Setting flex to 1 for textarea when no other component has flex
-                            // is effectively tells the layout to strech the textarea vertically,
-                            // taking all the space left after the fields above have been laid out.
-                            flex: 1
+                            fieldLabel: 'Option'
+                        },
+                        {
+                            xtype: 'textarea',
+                            name : 'notes',
+                            fieldLabel: 'Notes'
                         }
                     ]
                 }

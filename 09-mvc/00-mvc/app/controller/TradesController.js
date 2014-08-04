@@ -31,6 +31,11 @@ Ext.define('TL.controller.TradesController', {
 
             '#tradeFormItemId button[action=save]': {
                 click: this.saveTrade
+            },
+
+            "#tradeGridItemId": {
+                itemdblclick: this.editTrade
+                //selectionchange: this.selectedApplication
             }
 
         });
@@ -41,7 +46,7 @@ Ext.define('TL.controller.TradesController', {
 
         var formWindow = Ext.create('widget.tradeform'),	// Create new form window
             form = formWindow.down('form').getForm(),		    // Get form within window
-            model = Ext.create('model.trade');			// Create new Record model - alias: 'model.application',
+            model = Ext.create('model.trade');			// Create new Record model - alias: 'model.trade',
 
         // Associate model with form
         form.loadRecord(model);
@@ -49,6 +54,12 @@ Ext.define('TL.controller.TradesController', {
         // Show window
         formWindow.show();
 
+    },
+
+
+    editTrade: function(grid, record) {
+        var edit = Ext.create('widget.tradeform').show();
+        edit.down('form').loadRecord(record);
     },
 
     saveTrade: function(button) {
@@ -70,6 +81,7 @@ Ext.define('TL.controller.TradesController', {
             if (isNew) {
                 //need to set id to null to replace extjs generated string id for new entity.
                 record.set('id',null);
+                record.set('date_open', new Date());
 
                 store.add(record);
             }
