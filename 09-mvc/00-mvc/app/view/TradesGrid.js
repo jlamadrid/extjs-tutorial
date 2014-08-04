@@ -67,7 +67,15 @@ Ext.define('TL.view.TradesGrid', {
             ],
 
             /** plugins & features */
-            plugins: [cellEditing],
+            plugins: [
+                cellEditing,
+                {
+                    ptype: 'rowexpander',
+                    rowBodyTpl : new Ext.XTemplate(
+                        '<p><b>Notes:</b> {notes}</p>'
+                    )
+                }
+            ],
 
             columns: [
                 {

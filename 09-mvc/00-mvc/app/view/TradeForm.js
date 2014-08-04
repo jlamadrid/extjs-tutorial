@@ -113,7 +113,6 @@ Ext.define('TL.view.TradeForm', {
                                     xtype: 'datefield',
                                     name : 'date_closed',
                                     fieldLabel: 'Exit Date',
-                                    allowBlank: false,
                                     maxValue: new Date()
                                 }
 

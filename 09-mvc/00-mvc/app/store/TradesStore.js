@@ -27,7 +27,7 @@ Ext.define('TL.store.TradesStore', {
                 "return": .25,
                 "wl": "w",
                 "pl": 800.56,
-                notes: ""
+                notes: "open a long position using iron condor biased to upside......"
             },
             {
                 "id": 2,
