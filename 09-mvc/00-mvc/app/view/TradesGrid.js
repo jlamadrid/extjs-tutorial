@@ -126,6 +126,11 @@ Ext.define('TL.view.TradesGrid', {
                     ,sortable: true
                 },
                 {
+                    text: "W/L"
+                    ,dataIndex: 'wl'
+                    ,sortable: true
+                },
+                {
                     text: "P/L"
                     ,dataIndex: 'pl'
                     ,sortable: true

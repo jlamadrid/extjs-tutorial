@@ -36,37 +36,126 @@ Ext.define('TL.view.TradeForm', {
 
                     items: [
                         {
-                            xtype: 'textfield',
-                            name : 'ticker',
-                            fieldLabel: 'Ticker'
-                        },
-                        {
-                            xtype: 'combobox',
-                            fieldLabel: 'Strategies',
-                            name: 'strategy',
-                            store: {
-                                type: 'strategies'
+                            xtype: 'fieldset',
+                            title: 'General',
+                            defaultType: 'textfield',
+                            defaults: {
+                                anchor: '100%'
                             },
-                            valueField: 'name',
-                            displayField: 'name',
-                            typeAhead: true,
-                            queryMode: 'local',
-                            emptyText: 'Select a strategy...'
+
+                            items: [
+                                {
+                                    xtype: 'textfield',
+                                    name : 'ticker',
+                                    fieldLabel: 'Ticker'
+                                },
+                                {
+                                    xtype: 'combobox',
+                                    fieldLabel: 'Strategies',
+                                    name: 'strategy',
+                                    store: {
+                                        type: 'strategies'
+                                    },
+                                    valueField: 'name',
+                                    displayField: 'name',
+                                    typeAhead: true,
+                                    queryMode: 'local',
+                                    emptyText: 'Select a strategy...'
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    name : 'type',
+                                    fieldLabel: 'Type'
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    name : 'option',
+                                    fieldLabel: 'Option'
+                                }
+                            ]
                         },
                         {
-                            xtype: 'textfield',
-                            name : 'type',
-                            fieldLabel: 'Type'
+                            xtype: 'fieldset',
+                            title: 'Entry',
+                            defaultType: 'textfield',
+                            defaults: {
+                                anchor: '100%'
+                            },
+                            items: [
+                                {
+                                    xtype: 'textfield',
+                                    name : 'entry',
+                                    fieldLabel: 'Entry Price'
+                                },
+                                {
+                                    xtype: 'datefield',
+                                    name : 'date_open',
+                                    fieldLabel: 'Entry Date',
+                                    allowBlank: false,
+                                    maxValue: new Date()
+                                }
+                            ]
                         },
                         {
-                            xtype: 'textfield',
-                            name : 'option',
-                            fieldLabel: 'Option'
+                            xtype: 'fieldset',
+                            title: 'Exit',
+                            defaultType: 'textfield',
+                            defaults: {
+                                anchor: '100%'
+                            },
+                            items: [
+                                {
+                                    xtype: 'textfield',
+                                    name : 'exit',
+                                    fieldLabel: 'Exit Price'
+                                },
+                                {
+                                    xtype: 'datefield',
+                                    name : 'date_closed',
+                                    fieldLabel: 'Exit Date',
+                                    allowBlank: false,
+                                    maxValue: new Date()
+                                }
+
+                            ]
+
+                        },{
+                            xtype: 'fieldset',
+                            title: 'Results',
+                            defaultType: 'textfield',
+                            defaults: {
+                                anchor: '100%'
+                            },
+                            items: [
+                                {
+                                    xtype: 'textfield',
+                                    name : 'wl',
+                                    fieldLabel: 'Win/Loss'
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    name : 'pl',
+                                    fieldLabel: 'profit/Loss'
+                                }
+
+                            ]
+
                         },
                         {
-                            xtype: 'textarea',
-                            name : 'notes',
-                            fieldLabel: 'Notes'
+                            xtype: 'fieldset',
+                            title: 'Notes',
+                            defaultType: 'textfield',
+                            defaults: {
+                                anchor: '100%'
+                            },
+                            items: [
+                                {
+                                    xtype: 'textarea',
+                                    name : 'notes',
+                                    fieldLabel: 'Notes'
+                                }
+
+                            ]
                         }
                     ]
                 }
