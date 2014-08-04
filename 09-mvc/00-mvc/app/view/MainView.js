@@ -26,12 +26,12 @@ Ext.define('TL.view.MainView', {
                                 {
                                     xtype: 'tradesGrid',
                                     flex: 1,
-                                    region: 'west',
+                                    region: 'center',
                                     split: true
                                 },
                                 {
                                     flex: 1,
-                                    region: 'center',
+                                    region: 'south',
                                     split: true,
                                     id: 'detailPanel',
                                     bodyPadding: 7,
