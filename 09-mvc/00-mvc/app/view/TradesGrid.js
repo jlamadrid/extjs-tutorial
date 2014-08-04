@@ -73,7 +73,8 @@ Ext.define('TL.view.TradesGrid', {
                     ptype: 'rowexpander',
                     rowBodyTpl : new Ext.XTemplate(
                         '<p><b>Notes:</b> {notes}</p>'
-                    )
+                    ),
+                    expandOnDblClick: false
                 }
             ],
 
