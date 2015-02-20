@@ -1,0 +1,62 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "cases",
+        "designer|userClassName": "case.CaseListingViewModel"
+    },
+    "designerId": "0fe1ef72-02d4-4da3-8dac-bb36f94e7724",
+    "cn": [
+        {
+            "type": "jsonstore",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "data": [
+                    "[",
+                    "        {",
+                    "            case: 'VG05',",
+                    "            group: 'A',",
+                    "            sub_group: '2',",
+                    "            library: '11',",
+                    "            company: 'The Hartford Benefit Protection Master Trust',",
+                    "            certs: 32000,",
+                    "            case_admin: 'cmanneta'",
+                    "        },{",
+                    "            case: 'VG07',",
+                    "            group: 'B',",
+                    "            sub_group: '1',",
+                    "            library: '10',",
+                    "            company: 'The Bankers Greedy Master Trust',",
+                    "            certs: 10000,",
+                    "            case_admin: 'dmerril'",
+                    "        }",
+                    "    ]"
+                ],
+                "model": "CaseModel",
+                "name": "casemodel"
+            },
+            "name": "MyJsonStore",
+            "designerId": "3f0ea2f6-9ab8-405b-8b09-e581001b47f5",
+            "cn": [
+                {
+                    "type": "Ext.data.proxy.Memory",
+                    "reference": {
+                        "name": "proxy",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyMemoryProxy1",
+                    "designerId": "f0bbf8c3-9408-4944-a0ce-1053012616ba"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    data: [
+        {
+            cert: '00117',
+            last_name: 'Allen',
+            first_name: 'David',
+            ssn: '555-55-5555',
+            sex: 'M',
+            state_of_residence: 'VA',
+            state_of_employment: 'VA',
+            annual_premium: 3900,
+            face_amount: 71399
+        }
+    ]
+}

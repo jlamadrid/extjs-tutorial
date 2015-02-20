@@ -1,0 +1,42 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "casesCtrl",
+        "designer|userClassName": "case.CaseListingViewController"
+    },
+    "designerId": "fa90eb49-a172-4a38-b8f5-0a333a41a529",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "view"
+                ],
+                "fn": "showView",
+                "implHandler": [
+                    "var references = this.getReferences();",
+                    "",
+                    "var display = references.cardDisplayPanel;",
+                    "var layout = display.getLayout();",
+                    "",
+                    "var viewRef = this.lookupReference(view);",
+                    "",
+                    "layout.setActiveItem(viewRef);",
+                    ""
+                ]
+            },
+            "name": "showView",
+            "designerId": "168f3f16-4782-4d65-b64a-8c75a65b5917"
+        }
+    ]
+}

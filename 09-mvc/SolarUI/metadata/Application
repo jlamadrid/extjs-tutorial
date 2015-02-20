@@ -1,0 +1,25 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "models": [
+            "CaseModel",
+            "CertModel"
+        ],
+        "name": "SolarUI",
+        "stores": [
+            "CaseDataStore",
+            "CertDataStore"
+        ],
+        "views": [
+            "case.CaseListing",
+            "SolarUIViewPort"
+        ]
+    },
+    "name": "Application",
+    "designerId": "application"
+}

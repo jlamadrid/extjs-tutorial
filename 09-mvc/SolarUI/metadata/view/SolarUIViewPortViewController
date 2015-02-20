@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "solaruiviewport",
+        "designer|userClassName": "SolarUIViewPortViewController"
+    },
+    "designerId": "096e9d8c-c658-4bf5-b9d3-4227829e787b"
+}
