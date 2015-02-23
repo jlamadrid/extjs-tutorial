@@ -6,8 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userAlias": "cases",
-        "designer|userClassName": "case.CaseListingViewModel"
+        "designer|userAlias": "casesViewModel",
+        "designer|userClassName": "case.CaseViewViewModel"
     },
     "designerId": "0fe1ef72-02d4-4da3-8dac-bb36f94e7724",
     "cn": [

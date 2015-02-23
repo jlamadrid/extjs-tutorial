@@ -19,7 +19,7 @@ Ext.define('SolarUI.view.SolarUIViewPort', {
 
     requires: [
         'SolarUI.view.SolarUIViewPortViewModel',
-        'SolarUI.view.case.CaseListing',
+        'SolarUI.view.case.CaseView',
         'Ext.tab.Panel',
         'Ext.tab.Tab'
     ],
@@ -55,7 +55,7 @@ Ext.define('SolarUI.view.SolarUIViewPort', {
             activeTab: 0,
             items: [
                 {
-                    xtype: 'caselisting',
+                    xtype: 'caseview',
                     title: 'Case View'
                 }
             ]

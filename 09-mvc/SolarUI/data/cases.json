@@ -5,9 +5,18 @@
             group: 'A',
             sub_group: '2',
             library: '11',
-            company: 'The Hartford Benefit Protection Master Trust',
+            company: 'The Hart Benefit Protection Master Trust',
             certs: 32000,
-            case_admin: 'cmanneta'
+            case_admin: 'usera'
+        },
+        {
+            case: 'VG09',
+            group: 'B',
+            sub_group: '1',
+            library: '1',
+            company: 'The Greedy Trust',
+            certs: 10,
+            case_admin: 'usera'
         }
     ]
 }

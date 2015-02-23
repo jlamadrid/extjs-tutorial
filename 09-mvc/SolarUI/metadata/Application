@@ -8,15 +8,17 @@
     "userConfig": {
         "models": [
             "CaseModel",
-            "CertModel"
+            "CertModel",
+            "UserModel"
         ],
         "name": "SolarUI",
         "stores": [
             "CaseDataStore",
-            "CertDataStore"
+            "CertDataStore",
+            "UserDataStore"
         ],
         "views": [
-            "case.CaseListing",
+            "case.CaseView",
             "SolarUIViewPort"
         ]
     },

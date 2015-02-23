@@ -7,7 +7,7 @@
     "codeClass": null,
     "userConfig": {
         "designer|userAlias": "casesCtrl",
-        "designer|userClassName": "case.CaseListingViewController"
+        "designer|userClassName": "case.CaseViewViewController"
     },
     "designerId": "fa90eb49-a172-4a38-b8f5-0a333a41a529",
     "cn": [
@@ -37,6 +37,33 @@
             },
             "name": "showView",
             "designerId": "168f3f16-4782-4d65-b64a-8c75a65b5917"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "rowmodel",
+                    "record",
+                    "index",
+                    "eOpts"
+                ],
+                "fn": "select",
+                "implHandler": [
+                    "// Set selected record",
+                    "var viewModel = this.getViewModel();",
+                    "viewModel.set('record', record);",
+                    "",
+                    "// Show details",
+                    "this.showView('detailPnlRef');"
+                ]
+            },
+            "name": "select",
+            "designerId": "707f29e6-6913-4606-887a-0fcfe7d991de"
         }
     ]
 }
