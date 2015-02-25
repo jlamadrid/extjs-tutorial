@@ -26,9 +26,10 @@
 
     /**
      * The name of the theme for this application.
+     * ext-theme-neptune | ext-theme-classic
      */
     
-    "theme": "ext-theme-neptune",
+    "theme": "ext-theme-classic",
     
     /**
      * The list of required packages (with optional versions; default is "latest").
