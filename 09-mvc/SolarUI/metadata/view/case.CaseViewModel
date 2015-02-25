@@ -1,0 +1,81 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "casesViewModel",
+        "designer|userClassName": "case.CaseViewModel"
+    },
+    "designerId": "0fe1ef72-02d4-4da3-8dac-bb36f94e7724",
+    "cn": [
+        {
+            "type": "jsonstore",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoLoad": true,
+                "model": "CaseModel",
+                "name": "casemodel"
+            },
+            "name": "MyJsonStore",
+            "designerId": "3f0ea2f6-9ab8-405b-8b09-e581001b47f5",
+            "cn": [
+                {
+                    "type": "Ext.data.proxy.Ajax",
+                    "reference": {
+                        "name": "proxy",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "url": "data/cases.json"
+                    },
+                    "name": "MyAjaxProxy3",
+                    "designerId": "f0bbf8c3-9408-4944-a0ce-1053012616ba",
+                    "cn": [
+                        {
+                            "type": "Ext.data.reader.Json",
+                            "reference": {
+                                "name": "reader",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|createAlias": "",
+                                "rootProperty": "data"
+                            },
+                            "name": "MyJsonReader3",
+                            "designerId": "36b75938-97f6-4fd1-9caa-4938bfe73a1d"
+                        }
+                    ]
+                },
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onStoreLoad",
+                        "implHandler": [
+                            "store.data.each(function(data){",
+                            "    console.log('Case:' + data.data['case']);",
+                            "        });"
+                        ],
+                        "name": "load",
+                        "scope": "me"
+                    },
+                    "name": "onStoreLoad",
+                    "designerId": "fb6eaea6-bba5-49fd-a85c-9497028b3ca3"
+                }
+            ]
+        }
+    ]
+}
