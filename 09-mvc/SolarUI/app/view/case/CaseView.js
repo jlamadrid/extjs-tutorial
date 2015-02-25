@@ -18,22 +18,26 @@ Ext.define('SolarUI.view.case.CaseView', {
     alias: 'widget.caseview',
 
     requires: [
-        'SolarUI.view.case.CaseViewViewModel',
-        'SolarUI.view.case.CaseViewViewController',
+        'SolarUI.view.case.CaseViewModel',
+        'SolarUI.view.case.CaseViewController',
         'Ext.grid.Panel',
-        'Ext.grid.column.Column',
+        'Ext.grid.filters.filter.String',
+        'Ext.grid.filters.filter.List',
+        'Ext.grid.filters.filter.Number',
+        'Ext.grid.column.Boolean',
+        'Ext.grid.filters.Filters',
         'Ext.XTemplate',
         'Ext.form.Panel',
         'Ext.form.field.ComboBox',
         'Ext.button.Button',
-        'Ext.toolbar.Toolbar',
-        'Ext.toolbar.Separator'
+        'Ext.toolbar.Toolbar'
     ],
 
     controller: 'casesCtrl',
     viewModel: {
         type: 'casesViewModel'
     },
+    controller: 'casesCtrl',
     frame: true,
     height: 250,
     width: '100%',
@@ -42,9 +46,6 @@ Ext.define('SolarUI.view.case.CaseView', {
     layout: {
         type: 'vbox',
         align: 'stretch'
-    },
-    bind: {
-        controller: 'casesCtrl'
     },
     items: [
         {
@@ -58,34 +59,66 @@ Ext.define('SolarUI.view.case.CaseView', {
                 {
                     xtype: 'gridcolumn',
                     dataIndex: 'case',
-                    text: 'Case'
+                    text: 'Case',
+                    filter: {
+                        type: 'string',
+                        emptyText: 'search for case ...'
+                    }
                 },
                 {
                     xtype: 'gridcolumn',
+                    width: 300,
                     dataIndex: 'company',
-                    text: 'Company'
-                },
-                {
-                    xtype: 'gridcolumn',
-                    dataIndex: 'group',
-                    text: 'Group'
-                },
-                {
-                    xtype: 'gridcolumn',
-                    dataIndex: 'sub_group',
-                    text: 'Sub Group'
+                    text: 'Company',
+                    filter: {
+                        type: 'string'
+                    }
                 },
                 {
                     xtype: 'gridcolumn',
                     dataIndex: 'case_admin',
                     text: 'Case Admin',
+                    filter: {
+                        type: 'list'
+                    }
+                },
+                {
+                    xtype: 'gridcolumn',
+                    dataIndex: 'sub_group',
+                    text: 'Sub Group',
+                    filter: {
+                        type: 'number'
+                    }
+                },
+                {
+                    xtype: 'gridcolumn',
+                    renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                        //var out = Ext.util.Format.number(val, '0.00');
+                        if (value == 'A') {
+                            return '<span style="color:' + "#73b51e" + ';">' + value + '</span>';
+                        }
+                        return value;
+                    },
+                    dataIndex: 'group',
+                    text: 'Group'
+                },
+                {
+                    xtype: 'booleancolumn',
+                    dataIndex: 'mec',
+                    text: 'MEC Status',
                     flex: 1
                 }
             ],
             listeners: {
                 select: 'onGridpanelSelect',
-                rowdblclick: 'onGridpanelRowDblClick'
-            }
+                rowdblclick: 'onGridpanelRowDblClick',
+                itemcontextmenu: 'onGridpanelItemContextMenu'
+            },
+            plugins: [
+                {
+                    ptype: 'gridfilters'
+                }
+            ]
         },
         {
             xtype: 'panel',
@@ -98,8 +131,21 @@ Ext.define('SolarUI.view.case.CaseView', {
                     xtype: 'panel',
                     reference: 'detailPnlRef',
                     tpl: [
-                        '<p><b>Number of Lives:</b>{certs}</p>',
-                        '<p><b>Case Admin:</b>{case_admin}</p>'
+                        '<table>',
+                        '  <tr>',
+                        '    <td style="text-align: right"><b>Number of Lives:</b></td>',
+                        '    <td>{certs}</td>',
+                        '  </tr>',
+                        '  <tr>',
+                        '  <tr>',
+                        '    <td style="text-align: right"><b>Case Admin:</b></td>',
+                        '    <td>{case_admin}</td>',
+                        '  </tr>',
+                        '  <tr>',
+                        '    <td style="text-align: right"><b>MEC:</b></td>',
+                        '    <td>{mec}</td>',
+                        '  </tr>',
+                        '</table>'
                     ]
                 },
                 {
@@ -184,14 +230,6 @@ Ext.define('SolarUI.view.case.CaseView', {
                     listeners: {
                         click: 'add'
                     }
-                },
-                {
-                    xtype: 'tbseparator',
-                    width: 100
-                },
-                {
-                    xtype: 'textfield',
-                    fieldLabel: 'Filter'
                 }
             ]
         }

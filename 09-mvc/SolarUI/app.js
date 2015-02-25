@@ -26,7 +26,6 @@ Ext.application({
         'UserModel'
     ],
     stores: [
-        'CaseDataStore',
         'CertDataStore',
         'UserDataStore'
     ],

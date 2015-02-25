@@ -86,7 +86,7 @@ Ext.define('SolarUI.view.SolarUIViewPort', {
             xtype: 'tabpanel',
             region: 'east',
             resizable: true,
-            width: 250,
+            width: 350,
             collapsible: true,
             items: [
                 {

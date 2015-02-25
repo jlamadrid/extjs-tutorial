@@ -7,7 +7,8 @@
             library: '11',
             company: 'The Hart Benefit Protection Master Trust',
             certs: 32000,
-            case_admin: 'usera'
+            case_admin: 'usera',
+            mec: false
         },
         {
             case: 'VG09',
@@ -16,7 +17,38 @@
             library: '1',
             company: 'The Greedy Trust',
             certs: 10,
-            case_admin: 'usera'
+            case_admin: 'userb',
+            mec: false
+        },
+        {
+            case: 'VG19',
+            group: 'C',
+            sub_group: '5',
+            library: '1',
+            company: 'The Super Duper Greedy Trust',
+            certs: 1000,
+            case_admin: 'userc',
+            mec: true
+        },
+        {
+            case: 'VG27',
+            group: 'F',
+            sub_group: '1',
+            library: '100',
+            company: 'Capital 1 Trust',
+            certs: 100,
+            case_admin: 'userb',
+            mec: false
+        },
+        {
+            case: 'VG127',
+            group: 'A',
+            sub_group: '4',
+            library: '190',
+            company: 'Capital One Trust',
+            certs: 1980,
+            case_admin: 'usera',
+            mec: false
         }
     ]
 }

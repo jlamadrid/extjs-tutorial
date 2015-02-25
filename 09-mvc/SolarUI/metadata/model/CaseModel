@@ -89,6 +89,19 @@
             },
             "name": "MyField5",
             "designerId": "2786fbef-52ba-475b-a63f-0f0563c6d35c"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "mec"
+            },
+            "name": "MyBoolean1",
+            "designerId": "e027c34e-36f7-436a-8973-1a143b5cdf36"
         }
     ]
 }

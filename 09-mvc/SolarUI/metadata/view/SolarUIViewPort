@@ -115,7 +115,7 @@
                     "userConfig": {
                         "title": "Case View"
                     },
-                    "name": "case.caseview",
+                    "name": "case.caseview2",
                     "designerId": "e5e9a6fc-90ef-417e-b057-6cac7cf4351e",
                     "masterInstanceId": "88ce24fa-30a9-4ea7-8e50-6f7865bcf423",
                     "cn": [
@@ -243,7 +243,7 @@
                 "designer|displayName": "DetailsTabRight",
                 "layout|region": "east",
                 "resizable": true,
-                "width": 250
+                "width": 350
             },
             "name": "MyTabPanel3",
             "configAlternates": {

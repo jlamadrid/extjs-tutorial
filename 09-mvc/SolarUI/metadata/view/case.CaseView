@@ -20,9 +20,6 @@
         "width": "100%"
     },
     "name": "MyPanel",
-    "configAlternates": {
-        "controller": "binding"
-    },
     "designerId": "88ce24fa-30a9-4ea7-8e50-6f7865bcf423",
     "viewControllerInstanceId": "fa90eb49-a172-4a38-b8f5-0a333a41a529",
     "viewModelInstanceId": "0fe1ef72-02d4-4da3-8dac-bb36f94e7724",
@@ -60,7 +57,22 @@
                         "text": "Case"
                     },
                     "name": "MyColumn5",
-                    "designerId": "7ad2cf21-7517-4293-aef8-fba98da98cdb"
+                    "designerId": "7ad2cf21-7517-4293-aef8-fba98da98cdb",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.filters.filter.String",
+                            "reference": {
+                                "name": "filter",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "emptyText": "search for case ..."
+                            },
+                            "name": "MyStringFilter",
+                            "designerId": "e427ce8e-1835-48e5-803b-179e58a7150b"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.grid.column.Column",
@@ -72,10 +84,23 @@
                     "userConfig": {
                         "dataIndex": "company",
                         "flex": null,
-                        "text": "Company"
+                        "text": "Company",
+                        "width": 300
                     },
                     "name": "MyColumn",
-                    "designerId": "8975e0c2-1813-4c1c-853a-5453f3acd453"
+                    "designerId": "8975e0c2-1813-4c1c-853a-5453f3acd453",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.filters.filter.String",
+                            "reference": {
+                                "name": "filter",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyStringFilter1",
+                            "designerId": "62dcc090-a08d-4634-8f67-a72a2cb61f21"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.grid.column.Column",
@@ -85,12 +110,24 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dataIndex": "group",
+                        "dataIndex": "case_admin",
                         "flex": null,
-                        "text": "Group"
+                        "text": "Case Admin"
                     },
-                    "name": "MyColumn2",
-                    "designerId": "7e8d7b13-9bdc-44a2-89d5-d00aa89a65b4"
+                    "name": "MyColumn1",
+                    "designerId": "6d19fd9a-b4d3-4d76-819d-3c8311bdf2e9",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.filters.filter.List",
+                            "reference": {
+                                "name": "filter",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyListFilter",
+                            "designerId": "ecd42b3b-2fe8-4937-b058-15e34d2fe34f"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.grid.column.Column",
@@ -105,7 +142,19 @@
                         "text": "Sub Group"
                     },
                     "name": "MyColumn3",
-                    "designerId": "2333a017-2c98-4e5f-9543-2a0d56952b85"
+                    "designerId": "2333a017-2c98-4e5f-9543-2a0d56952b85",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.filters.filter.Number",
+                            "reference": {
+                                "name": "filter",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyNumberFilter",
+                            "designerId": "5f8692a5-3914-40e3-8d66-e77a37a48134"
+                        }
+                    ]
                 },
                 {
                     "type": "Ext.grid.column.Column",
@@ -115,12 +164,59 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dataIndex": "case_admin",
-                        "flex": 1,
-                        "text": "Case Admin"
+                        "dataIndex": "group",
+                        "flex": null,
+                        "text": "Group"
                     },
-                    "name": "MyColumn1",
-                    "designerId": "6d19fd9a-b4d3-4d76-819d-3c8311bdf2e9"
+                    "name": "MyColumn2",
+                    "designerId": "7e8d7b13-9bdc-44a2-89d5-d00aa89a65b4",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "fn": "renderer",
+                                "implHandler": [
+                                    "//var out = Ext.util.Format.number(val, '0.00');",
+                                    "if (value == 'A') {",
+                                    "    return '<span style=\"color:' + \"#73b51e\" + ';\">' + value + '</span>';",
+                                    "}",
+                                    "return value;"
+                                ]
+                            },
+                            "name": "renderer",
+                            "designerId": "18cbd693-e744-4795-890b-3862c1620fb7"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Boolean",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "mec",
+                        "designer|displayName": "MEC Status",
+                        "flex": 1,
+                        "text": "MEC Status"
+                    },
+                    "name": "MyBooleanColumn",
+                    "designerId": "f500a01b-b7b1-43f5-9e8b-fa7859bebc64"
                 },
                 {
                     "type": "viewcontrollereventbinding",
@@ -182,6 +278,41 @@
                     },
                     "name": "onGridpanelRowDblClick",
                     "designerId": "f47a33a4-f55c-44cd-8e65-ed991bee0bda"
+                },
+                {
+                    "type": "Ext.grid.filters.Filters",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyGridFiltersPlugin",
+                    "designerId": "00457dc2-d975-4976-aa66-4c5b57a0c242"
+                },
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onGridpanelItemContextMenu",
+                        "implHandler": [
+                            "e.stopEvent();",
+                            "//this.mnuContext.showAt(e.getXY());",
+                            "var car = Ext.create('car',{",
+                            "    name: 'george'",
+                            "});",
+                            "",
+                            "car.toConsole();",
+                            ""
+                        ],
+                        "name": "itemcontextmenu",
+                        "scope": "me"
+                    },
+                    "name": "onGridpanelItemContextMenu",
+                    "designerId": "f04ac00d-ee25-4c95-8928-200dacbda4da"
                 }
             ]
         },
@@ -226,8 +357,21 @@
                             "userConfig": {
                                 "designer|displayName": "tpl",
                                 "implHandler": [
-                                    "<p><b>Number of Lives:</b>{certs}</p>",
-                                    "<p><b>Case Admin:</b>{case_admin}</p>"
+                                    "<table>",
+                                    "  <tr>",
+                                    "    <td style=\"text-align: right\"><b>Number of Lives:</b></td>",
+                                    "    <td>{certs}</td>",
+                                    "  </tr>",
+                                    "  <tr>",
+                                    "  <tr>",
+                                    "    <td style=\"text-align: right\"><b>Case Admin:</b></td>",
+                                    "    <td>{case_admin}</td>",
+                                    "  </tr>",
+                                    "  <tr>",
+                                    "    <td style=\"text-align: right\"><b>MEC:</b></td>",
+                                    "    <td>{mec}</td>",
+                                    "  </tr>",
+                                    "</table>"
                                 ]
                             },
                             "name": "tpl",
@@ -535,34 +679,6 @@
                             "designerId": "c9372698-5641-46ea-9936-334920a5fe37"
                         }
                     ]
-                },
-                {
-                    "type": "Ext.toolbar.Separator",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "layout|flex": null,
-                        "width": 100
-                    },
-                    "name": "MySeparator",
-                    "designerId": "160f08b0-595f-4ac6-a558-8f9956564f55"
-                },
-                {
-                    "type": "Ext.form.field.Text",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "fieldLabel": "Filter",
-                        "layout|flex": null
-                    },
-                    "name": "MyTextField",
-                    "designerId": "1480165f-c555-498b-accd-9468a9dc54d6"
                 }
             ]
         }

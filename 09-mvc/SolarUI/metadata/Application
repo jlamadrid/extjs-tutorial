@@ -13,7 +13,6 @@
         ],
         "name": "SolarUI",
         "stores": [
-            "CaseDataStore",
             "CertDataStore",
             "UserDataStore"
         ],

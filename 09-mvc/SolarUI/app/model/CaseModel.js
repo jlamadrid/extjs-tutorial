@@ -18,7 +18,7 @@ Ext.define('SolarUI.model.CaseModel', {
     alias: 'model.case',
 
     requires: [
-        'Ext.data.field.Field'
+        'Ext.data.field.Boolean'
     ],
 
     fields: [
@@ -39,6 +39,10 @@ Ext.define('SolarUI.model.CaseModel', {
         },
         {
             name: 'sub_group'
+        },
+        {
+            type: 'boolean',
+            name: 'mec'
         }
     ]
 });
